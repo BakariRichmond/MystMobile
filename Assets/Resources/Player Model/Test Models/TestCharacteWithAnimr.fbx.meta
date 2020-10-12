@@ -1,0 +1,370 @@
+fileFormatVersion: 2
+guid: 9889da22fb5127a499d4a987527e7cec
+timeCreated: 1590441911
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Armature
+    100002: Chest
+    100004: Cube
+    100006: CuteCharacter
+    100008: Foot.L
+    100010: Foot.R
+    100012: Hand.L
+    100014: Hand.R
+    100016: Head
+    100018: Hips
+    100020: LowerArm.L
+    100022: LowerArm.R
+    100024: LowerLeg.L
+    100026: LowerLeg.R
+    100028: LowerSpine
+    100030: Neck
+    100032: Shoulder.L
+    100034: Shoulder.R
+    100036: ShoulderConnector.L
+    100038: ShoulderConnector.R
+    100040: //RootNode
+    100042: UpperArm.L
+    100044: UpperArm.R
+    100046: UpperLeg.L
+    100048: UpperLeg.R
+    400000: Armature
+    400002: Chest
+    400004: Cube
+    400006: CuteCharacter
+    400008: Foot.L
+    400010: Foot.R
+    400012: Hand.L
+    400014: Hand.R
+    400016: Head
+    400018: Hips
+    400020: LowerArm.L
+    400022: LowerArm.R
+    400024: LowerLeg.L
+    400026: LowerLeg.R
+    400028: LowerSpine
+    400030: Neck
+    400032: Shoulder.L
+    400034: Shoulder.R
+    400036: ShoulderConnector.L
+    400038: ShoulderConnector.R
+    400040: //RootNode
+    400042: UpperArm.L
+    400044: UpperArm.R
+    400046: UpperLeg.L
+    400048: UpperLeg.R
+    2300000: Cube
+    3300000: Cube
+    4300000: Cube
+    4300002: CuteCharacter
+    7400000: Armature|ArmatureAction
+    7400002: Armature|T Pose
+    7400004: Armature|TalkAction
+    9500000: //RootNode
+    13700000: CuteCharacter
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Armature|ArmatureAction
+      takeName: Armature|ArmatureAction
+      firstFrame: 0
+      lastFrame: 17
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Hips
+        weight: 1
+      - path: Armature/Hips/LowerSpine
+        weight: 1
+      - path: Armature/Hips/LowerSpine/Chest
+        weight: 1
+      - path: Armature/Hips/LowerSpine/Chest/Neck
+        weight: 1
+      - path: Armature/Hips/LowerSpine/Chest/Neck/Head
+        weight: 1
+      - path: Armature/Hips/LowerSpine/Chest/ShoulderConnector.L
+        weight: 1
+      - path: Armature/Hips/LowerSpine/Chest/ShoulderConnector.L/Shoulder.L
+        weight: 1
+      - path: Armature/Hips/LowerSpine/Chest/ShoulderConnector.L/Shoulder.L/UpperArm.L
+        weight: 1
+      - path: Armature/Hips/LowerSpine/Chest/ShoulderConnector.L/Shoulder.L/UpperArm.L/LowerArm.L
+        weight: 1
+      - path: Armature/Hips/LowerSpine/Chest/ShoulderConnector.L/Shoulder.L/UpperArm.L/LowerArm.L/Hand.L
+        weight: 1
+      - path: Armature/Hips/LowerSpine/Chest/ShoulderConnector.R
+        weight: 1
+      - path: Armature/Hips/LowerSpine/Chest/ShoulderConnector.R/Shoulder.R
+        weight: 1
+      - path: Armature/Hips/LowerSpine/Chest/ShoulderConnector.R/Shoulder.R/UpperArm.R
+        weight: 1
+      - path: Armature/Hips/LowerSpine/Chest/ShoulderConnector.R/Shoulder.R/UpperArm.R/LowerArm.R
+        weight: 1
+      - path: Armature/Hips/LowerSpine/Chest/ShoulderConnector.R/Shoulder.R/UpperArm.R/LowerArm.R/Hand.R
+        weight: 1
+      - path: Armature/Hips/UpperLeg.L
+        weight: 1
+      - path: Armature/Hips/UpperLeg.L/LowerLeg.L
+        weight: 1
+      - path: Armature/Hips/UpperLeg.L/LowerLeg.L/Foot.L
+        weight: 1
+      - path: Armature/Hips/UpperLeg.R
+        weight: 1
+      - path: Armature/Hips/UpperLeg.R/LowerLeg.R
+        weight: 1
+      - path: Armature/Hips/UpperLeg.R/LowerLeg.R/Foot.R
+        weight: 1
+      - path: Cube
+        weight: 1
+      - path: CuteCharacter
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Armature|T Pose
+      takeName: Armature|T Pose
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Hips
+        weight: 1
+      - path: Armature/Hips/LowerSpine
+        weight: 1
+      - path: Armature/Hips/LowerSpine/Chest
+        weight: 1
+      - path: Armature/Hips/LowerSpine/Chest/Neck
+        weight: 1
+      - path: Armature/Hips/LowerSpine/Chest/Neck/Head
+        weight: 1
+      - path: Armature/Hips/LowerSpine/Chest/ShoulderConnector.L
+        weight: 1
+      - path: Armature/Hips/LowerSpine/Chest/ShoulderConnector.L/Shoulder.L
+        weight: 1
+      - path: Armature/Hips/LowerSpine/Chest/ShoulderConnector.L/Shoulder.L/UpperArm.L
+        weight: 1
+      - path: Armature/Hips/LowerSpine/Chest/ShoulderConnector.L/Shoulder.L/UpperArm.L/LowerArm.L
+        weight: 1
+      - path: Armature/Hips/LowerSpine/Chest/ShoulderConnector.L/Shoulder.L/UpperArm.L/LowerArm.L/Hand.L
+        weight: 1
+      - path: Armature/Hips/LowerSpine/Chest/ShoulderConnector.R
+        weight: 1
+      - path: Armature/Hips/LowerSpine/Chest/ShoulderConnector.R/Shoulder.R
+        weight: 1
+      - path: Armature/Hips/LowerSpine/Chest/ShoulderConnector.R/Shoulder.R/UpperArm.R
+        weight: 1
+      - path: Armature/Hips/LowerSpine/Chest/ShoulderConnector.R/Shoulder.R/UpperArm.R/LowerArm.R
+        weight: 1
+      - path: Armature/Hips/LowerSpine/Chest/ShoulderConnector.R/Shoulder.R/UpperArm.R/LowerArm.R/Hand.R
+        weight: 1
+      - path: Armature/Hips/UpperLeg.L
+        weight: 1
+      - path: Armature/Hips/UpperLeg.L/LowerLeg.L
+        weight: 1
+      - path: Armature/Hips/UpperLeg.L/LowerLeg.L/Foot.L
+        weight: 1
+      - path: Armature/Hips/UpperLeg.R
+        weight: 1
+      - path: Armature/Hips/UpperLeg.R/LowerLeg.R
+        weight: 1
+      - path: Armature/Hips/UpperLeg.R/LowerLeg.R/Foot.R
+        weight: 1
+      - path: Cube
+        weight: 1
+      - path: CuteCharacter
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Armature|TalkAction
+      takeName: Armature|TalkAction
+      firstFrame: 0
+      lastFrame: 17
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Hips
+        weight: 1
+      - path: Armature/Hips/LowerSpine
+        weight: 1
+      - path: Armature/Hips/LowerSpine/Chest
+        weight: 1
+      - path: Armature/Hips/LowerSpine/Chest/Neck
+        weight: 1
+      - path: Armature/Hips/LowerSpine/Chest/Neck/Head
+        weight: 1
+      - path: Armature/Hips/LowerSpine/Chest/ShoulderConnector.L
+        weight: 1
+      - path: Armature/Hips/LowerSpine/Chest/ShoulderConnector.L/Shoulder.L
+        weight: 1
+      - path: Armature/Hips/LowerSpine/Chest/ShoulderConnector.L/Shoulder.L/UpperArm.L
+        weight: 1
+      - path: Armature/Hips/LowerSpine/Chest/ShoulderConnector.L/Shoulder.L/UpperArm.L/LowerArm.L
+        weight: 1
+      - path: Armature/Hips/LowerSpine/Chest/ShoulderConnector.L/Shoulder.L/UpperArm.L/LowerArm.L/Hand.L
+        weight: 1
+      - path: Armature/Hips/LowerSpine/Chest/ShoulderConnector.R
+        weight: 1
+      - path: Armature/Hips/LowerSpine/Chest/ShoulderConnector.R/Shoulder.R
+        weight: 1
+      - path: Armature/Hips/LowerSpine/Chest/ShoulderConnector.R/Shoulder.R/UpperArm.R
+        weight: 1
+      - path: Armature/Hips/LowerSpine/Chest/ShoulderConnector.R/Shoulder.R/UpperArm.R/LowerArm.R
+        weight: 1
+      - path: Armature/Hips/LowerSpine/Chest/ShoulderConnector.R/Shoulder.R/UpperArm.R/LowerArm.R/Hand.R
+        weight: 1
+      - path: Armature/Hips/UpperLeg.L
+        weight: 1
+      - path: Armature/Hips/UpperLeg.L/LowerLeg.L
+        weight: 1
+      - path: Armature/Hips/UpperLeg.L/LowerLeg.L/Foot.L
+        weight: 1
+      - path: Armature/Hips/UpperLeg.R
+        weight: 1
+      - path: Armature/Hips/UpperLeg.R/LowerLeg.R
+        weight: 1
+      - path: Armature/Hips/UpperLeg.R/LowerLeg.R/Foot.R
+        weight: 1
+      - path: Cube
+        weight: 1
+      - path: CuteCharacter
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: ad6c9fa9ecc706147a74cab1c4575c61
+timeCreated: 1576611119
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Autobus Bold
+  fontNames:
+  - Autobus Bold
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

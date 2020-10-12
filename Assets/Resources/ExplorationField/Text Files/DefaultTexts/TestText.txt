@@ -1,0 +1,3 @@
+Welcome to the demo. This is a test of the dialougue system. For now there are only a few lines of text. 
+I just pressed enter to see how that is interperated. A few more lines of text for a 3rd page. Maybe even enough dialougue for a 4th page to see whats going on here,
+ this is a really long string of text man. You just keep reading and reading! When will it end? 

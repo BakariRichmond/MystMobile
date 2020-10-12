@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 56e5cdcac2e49524e9a950d5ed1e91c9
+timeCreated: 1581026390
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Tobago Poster Alternate
+  fontNames:
+  - Tobago Poster Alternate
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: b5a20961d6aa46843acc6e4a86e65d5a
+timeCreated: 1581026390
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Tobago Poster Shadow
+  fontNames:
+  - Tobago Poster Shadow
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

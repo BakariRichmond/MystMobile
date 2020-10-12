@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: e0d5745395ca8bc458c9509c9a882333
+timeCreated: 1581988620
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - Spell1: {fileID: 54208715172871608, guid: faf5aac64eb02c740bb7c1ad13a7f4f3, type: 2}
+  - Spell2: {fileID: 54427448076191650, guid: ea646b4d8ddcfb64e9e8bf2dfd824782, type: 2}
+  - Spell3: {fileID: 54378827473362536, guid: a9698d18d5457004388d62539b844ddf, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
