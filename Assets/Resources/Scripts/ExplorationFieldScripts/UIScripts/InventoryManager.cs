@@ -53,7 +53,7 @@ public class InventoryManager : MonoBehaviour {
 		}
 		if (PlayerStats.LootSpell != "null") {
 			//adds loot spell obtained to inventory
-			Loot = Instantiate (Resources.Load ("Projectile Models/Spells/" + PlayerStats.LootSpell)) as GameObject;
+			Loot = Instantiate (Resources.Load ("BattleField/Projectile Models/Spells/" + PlayerStats.LootSpell)) as GameObject;
 
 			SpellRef lootSpell = new SpellRef ();
 			lootSpell.name = Loot.name.Replace ("(Clone)", "");
@@ -70,7 +70,7 @@ public class InventoryManager : MonoBehaviour {
 
 			print (PlayerStats.SpellRefs[i].name + " at " + i);
 
-			GameObject InvSpellClone = Instantiate (Resources.Load ("Projectile Models/Spells/" + PlayerStats.SpellRefs[i].name)) as GameObject;
+			GameObject InvSpellClone = Instantiate (Resources.Load ("BattleField/Projectile Models/Spells/" + PlayerStats.SpellRefs[i].name)) as GameObject;
 
 			if (PlayerStats.SpellRefs[i].equipped) {
 				InvSpellClone.GetComponent<InvSlot> ().Equipped = true;

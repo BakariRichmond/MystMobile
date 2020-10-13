@@ -33,7 +33,7 @@ public class InteractHandler : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		print("objectbool is " + ObjectBool);
+		
 
 	}
 	public void OnClickOpen () {

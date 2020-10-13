@@ -7,6 +7,7 @@ public class DestroyObject : MonoBehaviour {
     public GameObject Target;
     public bool generalMode;
     public bool selfDestruct;
+    public float selfDestructSpeed = .2f;
     public static bool CompletedRoomEvent = false;
     // Start is called before the first frame update
     void Start () {
@@ -26,13 +27,17 @@ public class DestroyObject : MonoBehaviour {
             
             Destroy (Target);
             if (selfDestruct) {
-                Destroy (gameObject, .2f);
+               
                 if(gameObject.name == "Quest TriggerWindow Test"){
                     //sets bool to true for room event
                     CompletedRoomEvent = true;
+                    GameObject.Find("CloseButton").transform.localScale = new Vector3 (0f, 0f, 0);
                 }
-                
                 GameObject.Find("InteractButton").transform.localScale = new Vector3 (0f, 0f, 0);
+                
+                 Destroy (gameObject, selfDestructSpeed);
+                
+                
 
             }
 
