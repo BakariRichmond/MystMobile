@@ -7,6 +7,8 @@ using UnityEngine.UI;
 
 public class TimeTrack : MonoBehaviour {
 	static public int GameTime = 0;
+	static public bool initStartingTime = false;
+	public int StartingTime = 600;
 	public bool GameTimePause;
 	public GameObject Sun;
 	static public float lightLevel;
@@ -19,6 +21,11 @@ public class TimeTrack : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		if(!initStartingTime){
+			initStartingTime = true;
+			GameTime = StartingTime;
+
+		}
 		TimeBG = GameObject.Find ("TimeBG");
 
 		Sun = GameObject.Find ("Sun");

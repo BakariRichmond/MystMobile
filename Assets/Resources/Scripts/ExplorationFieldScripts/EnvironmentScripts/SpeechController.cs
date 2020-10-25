@@ -52,11 +52,12 @@ public class SpeechController : MonoBehaviour {
 		}
 		//if there is no quest script, speech text is pulled from default resource
 		if (gameObject.GetComponent<QuestScript> () == null) {
-			SpeechText = SpeechTextRes.ToString ();
+			if(SpeechTextRes != null){
+			SpeechText = SpeechTextRes.ToString ();}
 
 		}
-
-		DefaultText = DefaultTextRes.ToString ();
+		if(DefaultTextRes != null){
+		DefaultText = DefaultTextRes.ToString ();}
 
 		//sets animator if relevant
 		if (Model != null) {
@@ -86,6 +87,7 @@ public class SpeechController : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+		
 		if (inCollider) {
 			//sets interact button text to current interact text while in the collider
 			if (InteractButton.GetComponentInChildren<Text> ().text != "") {
@@ -113,6 +115,7 @@ public class SpeechController : MonoBehaviour {
 		if ((Input.GetButtonDown ("Jump") | InteractHandler.GetComponent<InteractHandler> ().ObjectBool | walkIn) & inCollider) {
 			
 			InteractHandler.GetComponent<InteractHandler> ().ObjectBool = false;
+			print("tiggered trigger start");
 			triggerStart = true;
 
 			walkIn = false;
@@ -133,7 +136,9 @@ public class SpeechController : MonoBehaviour {
 					SpeechBG.GetComponent<DialougueHandler> ().finished = 0;
 					CloseButton.transform.localScale = new Vector3 (0f, 0f, 0);
 					//sets trigger which indicates speech is finished, and resets triggerStart which indicates speech started
-					trigger = true;
+					trigger = true; 
+					print(trigger + "- trigger for " + gameObject.name);
+					print(gameObject.name + "current default text is: " + DefaultText);
 					triggerStart = false;
 					
 					if (!initWalkIn) {

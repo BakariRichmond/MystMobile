@@ -15,13 +15,14 @@
  		public AxisOption axesToUse = AxisOption.Both; // The options for the axes that the still will use
  		public string horizontalAxisName = "Horizontal"; // The name given to the horizontal axis for the cross platform input
  		public string verticalAxisName = "Vertical"; // The name given to the vertical axis for the cross platform input
-
+ 		public GameObject MainCam;
  		Vector3 m_StartPos;
  		bool m_UseX; // Toggle for using the x axis
  		bool m_UseY; // Toggle for using the Y axis
  		public bool ExplorationMode;
-		 public Vector3 pos;
-		 [SerializeField]
+ 		public bool firstInit = true;
+ 		public Vector3 pos;
+ 		[SerializeField]
  		public GameObject Player;
  		CrossPlatformInputManager.VirtualAxis m_HorizontalVirtualAxis; // Reference to the joystick in the cross platform input
  		CrossPlatformInputManager.VirtualAxis m_VerticalVirtualAxis; // Reference to the joystick in the cross platform input
@@ -31,14 +32,14 @@
  		}
 
  		void Start () {
-			 pos = Camera.main.WorldToScreenPoint (Player.transform.position);
+ 			pos = Camera.main.WorldToScreenPoint (Player.transform.position);
  			if (ExplorationMode != true) {
  				m_StartPos = transform.position;
+ 			} else {
+ 				m_StartPos = pos;
+
  			}
-			 else{
-				 m_StartPos = pos;
-			 }
-			 /*
+ 			/*
 			 	if (ExplorationMode == true) {
  				if (GameObject.Find ("Main Camera").GetComponent<CameraController> ().init) {
  					pos = Camera.main.WorldToScreenPoint (Player.transform.position);
@@ -50,17 +51,22 @@
  		}
  		void Update () {
 
-			 
-
  			if (ExplorationMode == true) {
- 				if (GameObject.Find ("Main Camera").GetComponent<CameraController> ().init) {
+ 				if (GameObject.Find ("Main Camera").GetComponent<CameraController> ().init & !firstInit) {
  					pos = Camera.main.WorldToScreenPoint (Player.transform.position);
  					m_StartPos = pos;
-					 //gameObject.transform.position = pos;
- 					GameObject.Find ("Main Camera").GetComponent<CameraController> ().init = false;
+ 					print ("caminit");
+ 					//gameObject.transform.position = pos;
+
+ 					
+ 				} else {
+ 					if (firstInit) {
+						 print("first init");
+ 						firstInit = false;
+						 
+ 					}
  				}
- 			}
-			 
+ 			} 
 
  		}
 

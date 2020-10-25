@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityStandardAssets.CrossPlatformInput;
+using UnityEngine.UI;
 
 public class OverWorldPlayerControls : MonoBehaviour {
     public GameObject Field;
@@ -18,6 +19,11 @@ public class OverWorldPlayerControls : MonoBehaviour {
     public bool devLocation;
     public AudioSource walking;
     public AudioSource running;
+     GameObject TransitionBG;
+    GameObject LoadingBG;
+    public GameObject TestOrbit;
+    public Camera MainCam;
+    public bool defaultMode;
 
     private Vector3 moveDirection = Vector3.zero;
     CharacterController controller;
@@ -26,6 +32,9 @@ public class OverWorldPlayerControls : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        
+        TransitionBG = GameObject.Find("TransitionBG");
+        LoadingBG = GameObject.Find("LoadingBG");
         PlayerStats.CurrentScene = SceneManager.GetActiveScene ().name;
         Anim = gameObject.GetComponent<Animator> (); //GameObject.Find("MainCharacter").
 
@@ -60,12 +69,17 @@ public class OverWorldPlayerControls : MonoBehaviour {
             //setsfieldscript  battleseed to enemy battleseed
             fScript.BattleSeed = eScript.EnemySeed;
             //loads battle scene
-            SceneManager.LoadScene ("BattleFieldScene", LoadSceneMode.Single);
+
+           // GameObject.Find("SceneExit").GetComponent<SceneChange>().FadeInRoutine();
+            StartCoroutine (FadeInRoutine ());
+            //SceneManager.LoadScene ("BattleFieldScene", LoadSceneMode.Single);
 
     }
 
     // Update is called once per frame
     void Update () {
+
+        
      
 
         if (Menu.GetComponent<PauseToggle> ().open == false) {
@@ -123,10 +137,19 @@ public class OverWorldPlayerControls : MonoBehaviour {
             if (mobileControl) {
                 //sets angle and direction based on control stick
 
+                //myAngle = Mathf.Atan2 (CrossPlatformInputManager.GetAxis ("Horizontal"), CrossPlatformInputManager.GetAxis ("Vertical")) * Mathf.Rad2Deg;
+                if(!defaultMode){
+                moveDirection = new Vector3 (CrossPlatformInputManager.GetAxis ("Horizontal"), 0.0f, CrossPlatformInputManager.GetAxis ("Vertical"));
+                moveDirection = MainCam.transform.TransformDirection(moveDirection);
+                myAngle = Mathf.Atan2 (moveDirection.x, moveDirection.z) * Mathf.Rad2Deg;
+                
+                moveDirection.y = 0.0f;
+                }else{
+                
                 myAngle = Mathf.Atan2 (CrossPlatformInputManager.GetAxis ("Horizontal"), CrossPlatformInputManager.GetAxis ("Vertical")) * Mathf.Rad2Deg;
 
                 moveDirection = new Vector3 (CrossPlatformInputManager.GetAxis ("Horizontal"), 0.0f, CrossPlatformInputManager.GetAxis ("Vertical"));
-
+                    }
             } else {
                 //set angle and direction based on keyboard controls
                 myAngle = Mathf.Atan2 (Input.GetAxis ("Horizontal"), Input.GetAxis ("Vertical")) * Mathf.Rad2Deg;
@@ -166,4 +189,76 @@ public class OverWorldPlayerControls : MonoBehaviour {
         }
 
     }
+IEnumerator FadeInRoutine () {
+    
+         float fadeAmount;
+		 float fadeSpeed = 5;
+         Color tempColor = TransitionBG.GetComponent<Image>().color;
+          tempColor = new Color(tempColor.r,tempColor.g,tempColor.b,0f);
+          TransitionBG.GetComponent<Image>().color = tempColor;
+          
+         TransitionBG.GetComponent<Image>().enabled = true;
+		  
+        //fade to black
+		 while (TransitionBG.GetComponent<Image>().color.a < 100){
+             if(TransitionBG.GetComponent<Image>().color.a > 5){
+                 fadeSpeed = 200;
+
+             }
+			 fadeAmount = tempColor.a + (fadeSpeed * Time.deltaTime);
+			 tempColor = new Color(tempColor.r,tempColor.g,tempColor.b,fadeAmount);
+		 
+          
+          TransitionBG.GetComponent<Image>().color = tempColor;
+          
+		  yield return null;
+		  }
+          fadeAmount = 0;
+		 fadeSpeed = 5;
+         tempColor = LoadingBG.GetComponent<Image>().color;
+         tempColor = new Color(tempColor.r,tempColor.g,tempColor.b,0f);
+         LoadingBG.GetComponent<Image>().color = tempColor;
+         LoadingBG.GetComponent<Image>().enabled = true;
+		  tempColor = LoadingBG.GetComponent<Image>().color;
+        //fade to black
+		 while (LoadingBG.GetComponent<Image>().color.a < 100){
+             if(LoadingBG.GetComponent<Image>().color.a > 5){
+                 fadeSpeed = 200;
+
+             }
+			 fadeAmount = tempColor.a + (fadeSpeed * Time.deltaTime);
+			 tempColor = new Color(tempColor.r,tempColor.g,tempColor.b,fadeAmount);
+		 
+          
+          LoadingBG.GetComponent<Image>().color = tempColor;
+          
+		  yield return null;
+		  }
+          //load new scene
+          StartCoroutine (LoadScene ("BattleFieldScene"));
+       
+        
+        
+        
+    }
+
+     public IEnumerator LoadScene (string scene) {
+
+      
+        
+
+        // Start an asynchronous operation
+        AsyncOperation async = Application.LoadLevelAsync (scene); //, LoadSceneMode.Single
+
+        // While the asynchronous operation to load the new scene is not complete, continue waiting until its done
+        while (!async.isDone) {
+            yield return null;
+        }
+
+    }
+
+
+
+
+
 }

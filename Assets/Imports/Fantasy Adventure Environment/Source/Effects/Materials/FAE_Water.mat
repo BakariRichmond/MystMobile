@@ -92,15 +92,15 @@ Material:
     - Vector1_E796673B: 6.97
     - _BumpScale: 1
     - _Cutoff: 0.5
-    - _Depth: 5.6
-    - _Depthdarkness: 0.58
+    - _Depth: 7.7
+    - _Depthdarkness: 0.719
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _EdgeFade: 1
     - _Float1: 0
     - _FlowSpeed: 1.02
     - _Fresnelexponent: 4
-    - _Glossiness: 0.806
+    - _Glossiness: 0.764
     - _HighlightPanning: 0
     - _Metallic: 0
     - _Metallicness: 0.265
@@ -108,10 +108,10 @@ Material:
     - _NormalStrength: 1
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _RefractionAmount: 0.0586
+    - _RefractionAmount: 0.035
     - _RimDistance: 0
     - _RimRize: 2
-    - _RimSize: 4
+    - _RimSize: 3.56
     - _RimTiling: 4.9
     - _Rimfalloff: 0.25
     - _Rimtiling: 0.79
@@ -122,7 +122,7 @@ Material:
     - _Surfacehightlightsize: 0
     - _TesselationEdgeLengt: 0.15
     - _Tiling: 0.27
-    - _Transparency: 0.286
+    - _Transparency: 0.161
     - _UVSec: 0
     - _UseIntersectionHighlight: 1
     - _Wavesspeed: 0.37

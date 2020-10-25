@@ -64,13 +64,13 @@ public class SceneChange : MonoBehaviour {
         }
     }
 
-    IEnumerator LoadScene () {
+    public IEnumerator LoadScene (string scene) {
 
       
         
 
         // Start an asynchronous operation
-        AsyncOperation async = Application.LoadLevelAsync (Scene); //, LoadSceneMode.Single
+        AsyncOperation async = Application.LoadLevelAsync (scene); //, LoadSceneMode.Single
 
         // While the asynchronous operation to load the new scene is not complete, continue waiting until its done
         while (!async.isDone) {
@@ -79,7 +79,7 @@ public class SceneChange : MonoBehaviour {
 
     }
 
-    IEnumerator FadeInRoutine () {
+    public IEnumerator FadeInRoutine () {
     
          float fadeAmount;
 		 float fadeSpeed = 5;
@@ -125,7 +125,7 @@ public class SceneChange : MonoBehaviour {
 		  yield return null;
 		  }
           //load new scene
-          StartCoroutine (LoadScene ());
+          StartCoroutine (LoadScene (Scene));
        
         
         

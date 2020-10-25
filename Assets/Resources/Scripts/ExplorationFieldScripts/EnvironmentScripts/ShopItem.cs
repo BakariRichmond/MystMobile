@@ -6,7 +6,7 @@ using System;
 using UnityEngine.UI;
 using CustomClasses;
 public class ShopItem : MonoBehaviour {
-    GameObject ShopCanvasConfirm;
+    public GameObject ShopCanvasConfirm;
     public GameObject spell;
     public string name;
     public int price;
@@ -14,7 +14,9 @@ public class ShopItem : MonoBehaviour {
     public GameObject priceObj;
     // Start is called before the first frame update
     void Start () {
-        ShopCanvasConfirm = GameObject.Find ("ShopCanvasConfirm");
+       ShopCanvasConfirm = GameObject.Find ("ShopCanvasConfirm");
+      // ShopCanvasConfirm.transform.localScale = new Vector3 (1f, 1f, 1);
+
         //sets name and price text of item in UI
         /*
         gameObject.transform.GetChild (0).gameObject.GetComponent<Text> ().text = name;
@@ -60,7 +62,7 @@ public class ShopItem : MonoBehaviour {
             NewSpell.equipped = false;
 
             GameObject GridPanel = GameObject.Find ("GridPanel");
-            GameObject InvSpellClone = Instantiate (Resources.Load ("Projectile Models/Spells/" + NewSpell.name)) as GameObject;
+            GameObject InvSpellClone = Instantiate (Resources.Load ("BattleField/Projectile Models/Spells/" + NewSpell.name)) as GameObject;
 
             PlayerStats.SpellRefs.Add (NewSpell);
             InvSpellClone.transform.SetParent (GridPanel.transform, false);

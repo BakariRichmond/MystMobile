@@ -85,7 +85,7 @@ public class FieldScript : MonoBehaviour {
 
                 GameObject EnemyObject = GameObject.Find (currentEnemy.name);
 
-                GameObject EnemyClone = Instantiate (Resources.Load ("EnemyModels/" + currentEnemy.name)) as GameObject;
+                GameObject EnemyClone = Instantiate (Resources.Load ("Standard Assets/EnemyModels/" + currentEnemy.name)) as GameObject;
                 PlayerStats.TempBattleEnemies.Add (currentEnemy.name);
 
                 print (GridLocs[rndLocations[i]][0] + "coord");

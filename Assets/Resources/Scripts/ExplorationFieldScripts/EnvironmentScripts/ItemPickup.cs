@@ -110,7 +110,9 @@ public class ItemPickup : MonoBehaviour {
 		if (!worldObject) {
 			InteractButton.transform.localScale = new Vector3 (1f, 1f, 1);
 		}
+		print("pause toggle false");
 		GameObject.Find ("Menu").GetComponent<PauseToggle> ().open = false;
+		GameObject.Find ("Menu").transform.localScale = new Vector3 (1f, 1f, 1);
 		NotificationOn = false;
 
 		Destroy (gameObject);
@@ -157,7 +159,7 @@ public class ItemPickup : MonoBehaviour {
 				//if not a munny amount, adds spell item and displays the item obtained
 
 				GameObject GridPanel = GameObject.Find ("GridPanel");
-				GameObject InvSpellClone = Instantiate (Resources.Load ("Projectile Models/Spells/" + NewSpell.name)) as GameObject;
+				GameObject InvSpellClone = Instantiate (Resources.Load ("BattleField/Projectile Models/Spells/" + NewSpell.name)) as GameObject;
 
 				PlayerStats.SpellRefs.Add (NewSpell);
 				InvSpellClone.transform.SetParent (GridPanel.transform, false);

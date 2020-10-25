@@ -13,19 +13,28 @@ public class HideUI : MonoBehaviour {
     private Vector3 start2;
     private Vector3 des2;
     private float fraction = 0;
+    public GameObject MiniMapGuideC;
+    public GameObject MiniMapGuideO;
 
     // Start is called before the first frame update
     void Start () {
-        
+        MiniMapGuideC = GameObject.Find("MiniMapGuideClosed");
+        MiniMapGuideO = GameObject.Find("MiniMapGuideOpen");
         Button=GameObject.Find("MiniMapArrow");
         pos = gameObject.transform.position;
         
         //sets psitions to move from
-        start1 = new Vector3 (6, transform.position.y, transform.position.z);
-        des1 = new Vector3 (-100, transform.position.y, transform.position.z);
-        start2 = new Vector3 (-100, transform.position.y, transform.position.z);
-        des2 = new Vector3 (6, transform.position.y, transform.position.z);
 
+        //start1 = new Vector3 (6, transform.position.y, transform.position.z);
+        //des1 = new Vector3 (-100, transform.position.y, transform.position.z);
+        //start2 = new Vector3 (-100, transform.position.y, transform.position.z);
+        //des2 = new Vector3 (6, transform.position.y, transform.position.z);
+        
+         start1 = MiniMapGuideO.transform.position;
+         start2 = MiniMapGuideC.transform.position;
+         des1 = MiniMapGuideC.transform.position;
+         des2 = MiniMapGuideO.transform.position;
+        
     }
 
     // Update is called once per frame

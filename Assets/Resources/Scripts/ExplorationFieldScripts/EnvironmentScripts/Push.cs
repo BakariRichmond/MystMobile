@@ -18,9 +18,11 @@ public class Push : MonoBehaviour {
     public GameObject OverWorldPlayer;
     public bool moving;
     public GameObject CrateEdge;
-    public static Vector3 BoxPosition = new Vector3 (-1.896773f, -1.13733f, 0.3370609f);
+    public static Vector3 BoxPosition = new Vector3 (-1.92f, -1.13733f, 0.3370609f);
     public static bool Moved;
     public GameObject GuardObject;
+    public GameObject InteractHandler;
+    
 
     // Start is called before the first frame update
     void Start () {
@@ -31,7 +33,7 @@ public class Push : MonoBehaviour {
 
         }
         gameObject.transform.localPosition = BoxPosition;
-
+        InteractHandler = GameObject.Find ("InteractButtonHandler");
         OverWorldPlayer = GameObject.Find ("OverWorldPlayer");
         Anim = OverWorldPlayer.GetComponent<Animator> ();
         InteractButton = GameObject.Find ("InteractPushButton");
@@ -72,7 +74,7 @@ public class Push : MonoBehaviour {
                 transform.position = Vector3.MoveTowards (transform.position, targetPos.transform.position, step);
             }
         }
-        if (Vector3.Distance (transform.position, targetPos.transform.position) == 0) {
+        if (Vector3.Distance (transform.position, targetPos.transform.position) == 0 & !Moved) {
             //when object is at destination, sets moved to true and stops pushing animation
             Moved = true;
             gameObject.GetComponent<MeshCollider> ().enabled = true;
@@ -80,6 +82,7 @@ public class Push : MonoBehaviour {
             Anim.SetBool ("isPushing", false);
             MobileJoystick.GetComponent<Image> ().enabled = true;
             BoxPosition = gameObject.transform.localPosition;
+            InteractHandler.GetComponent<InteractHandler> ().ObjectBool = false;
         }
 
     }
@@ -100,6 +103,7 @@ public class Push : MonoBehaviour {
         if (other.gameObject.tag == "Player") {
             InteractButton.transform.localScale = new Vector3 (0f, 0f, 0);
             Pointer.GetComponent<MeshRenderer> ().enabled = false;
+            InteractHandler.GetComponent<InteractHandler> ().ObjectBool = false;
             inCollider = false;
 
         }

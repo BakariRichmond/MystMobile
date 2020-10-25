@@ -69,7 +69,7 @@ public class PlayerMovement : MonoBehaviour {
 
             if (PlayerStats.SpellRefs[i].equipped) {
                 //instantiates equipped spells and adds them to battle spells
-                GameObject SpellClone = Instantiate (Resources.Load ("Projectile Models/Spells/" + PlayerStats.SpellRefs[i].name)) as GameObject;
+                GameObject SpellClone = Instantiate (Resources.Load ("BattleField/Projectile Models/Spells/" + PlayerStats.SpellRefs[i].name)) as GameObject;
                 
                 BattleSpells.Add (SpellClone);
             }

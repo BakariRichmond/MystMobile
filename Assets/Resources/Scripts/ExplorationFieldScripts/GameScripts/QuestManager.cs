@@ -172,7 +172,7 @@ public class QuestManager : MonoBehaviour {
                             print (Quests[i].QuestReward[0]);
 
                             if (Resources.Load ("Projectile Models/Spells/" + Quests[i].QuestReward) != null) {
-                                Loot.GetComponent<ItemPickup> ().Spell = (Resources.Load ("Projectile Models/Spells/" + Quests[i].QuestReward) as GameObject);
+                                Loot.GetComponent<ItemPickup> ().Spell = (Resources.Load ("BattleField/Projectile Models/Spells/" + Quests[i].QuestReward) as GameObject);
                                 Loot.GetComponent<ItemPickup> ().InitLoot ();
                                 Loot.GetComponent<ItemPickup> ().itemGet ();
                             } else {
@@ -183,7 +183,7 @@ public class QuestManager : MonoBehaviour {
 
                             print ("this is a cash reward");
 
-                            Loot.GetComponent<ItemPickup> ().Spell = (Resources.Load ("Projectile Models/Spells/Fire-ang") as GameObject);
+                            Loot.GetComponent<ItemPickup> ().Spell = (Resources.Load ("BattleField/Projectile Models/Spells/Fire-ang") as GameObject);
                             string temp = Quests[i].QuestReward;
                             string tempParse = temp.Substring (1);
                             //grants money amount

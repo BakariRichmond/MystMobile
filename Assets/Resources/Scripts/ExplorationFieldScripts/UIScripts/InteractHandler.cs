@@ -53,7 +53,8 @@ public class InteractHandler : MonoBehaviour {
 		ObjectBool = true;
 		InteractButton.transform.localScale = new Vector3 (1f, 1f, 1);
 		CloseButton.transform.localScale = new Vector3 (0f, 0f, 0);
-		//SpeechBG.transform.localScale = new Vector3 (0f, 0f, 0);
+		SpeechBG.transform.localScale = new Vector3 (0f, 0f, 0);
+		//GameObject.Find ("Menu").GetComponent<PauseToggle> ().open = false;
 		
 
 		if (open) {

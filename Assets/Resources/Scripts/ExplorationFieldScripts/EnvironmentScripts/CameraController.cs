@@ -12,7 +12,9 @@ public bool FollowMode;
 public Quaternion  rot;
 public Transform Marker;
 float speed = 6;
-public float rotSpeed = 10;
+public float rotSpeed = 50;
+public bool TestOrbit;
+public GameObject OrbitLocation;
 
 
     private Vector3 offset;        
@@ -38,20 +40,29 @@ public float rotSpeed = 10;
     {
 		if (FollowMode){
         // Set the position of the camera's transform to be the same as the player's, but offset by the calculated offset distance.
-       
+
+      if(!TestOrbit) {
         transform.position = OverWorldPlayer.transform.position + offset;
+        }
+        else{
+                   transform.position = OrbitLocation.transform.position;
+        }
         
         
 		}
     
 		
        //lerps rotation for smooth transition
+       if(!init){
         
         Quaternion lookOnLook = Quaternion.LookRotation(CameraLock.transform.position - transform.position);
  
         transform.rotation = Quaternion.Slerp(transform.rotation, lookOnLook, rotSpeed * Time.deltaTime);
 
-
+        if(transform.rotation == lookOnLook){
+        rotSpeed = 50;
         init = true;
+        }
+        }
     }
 }

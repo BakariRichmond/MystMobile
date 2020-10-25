@@ -23,6 +23,7 @@ public class NotificationTrigger : MonoBehaviour {
     public bool entered;
     public bool instant;
     private bool init = false;
+    bool done = false;
 
     // Start is called before the first frame update
     void Start () {
@@ -71,8 +72,15 @@ public class NotificationTrigger : MonoBehaviour {
             if (SpeechBG.GetComponent<DialougueHandler> ().finished == 2) {
                         SpeechBG.GetComponent<DialougueHandler> ().finished = 0;
                         CloseButton.transform.localScale = new Vector3 (1f, 1f, 1);
+                        done = true;
+
                         //SpeechBG.transform.localScale = new Vector3 (0f, 0f, 0);
                     }
+                     if (done & InteractHandler.GetComponent<InteractHandler> ().ObjectBool) {
+                         InteractHandler.GetComponent<InteractHandler> ().ObjectBool = false;
+                         GameObject.Find ("Menu").GetComponent<PauseToggle> ().open = false;
+
+                     }
             Vector3 open = new Vector3 (1f, 1f, 1);
                 if (GameObject.Find ("InteractButton").transform.localScale == open) {
                     //reopen interact button and close all other dialougue UI elements
@@ -82,6 +90,7 @@ public class NotificationTrigger : MonoBehaviour {
                     Menu.GetComponent<PauseToggle> ().open = false;
                     SpeechBG.transform.localScale = new Vector3 (0f, 0f, 0);
                     CloseButton.transform.localScale = new Vector3 (0f, 0f, 0);
+                    print("obj bool false");
                     InteractHandler.GetComponent<InteractHandler> ().ObjectBool = false;
 
                 }

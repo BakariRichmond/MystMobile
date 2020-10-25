@@ -9,6 +9,7 @@ public class DestroyObject : MonoBehaviour {
     public bool selfDestruct;
     public float selfDestructSpeed = .2f;
     public static bool CompletedRoomEvent = false;
+    public bool disableCollider;
     // Start is called before the first frame update
     void Start () {
         //checks if room event has already occured and stops it
@@ -24,8 +25,11 @@ public class DestroyObject : MonoBehaviour {
         
         if (gameObject.GetComponent<SpeechController> ().trigger) {
             //if dialougue box ended, deestroys target object and itseld if selfDestruct enabled
-            
-            Destroy (Target);
+            if(disableCollider){
+                Target.SetActive(false);//.GetComponent<Collider>().enabled = false;
+            }
+            else{
+            Destroy (Target);}
             if (selfDestruct) {
                
                 if(gameObject.name == "Quest TriggerWindow Test"){
@@ -34,8 +38,12 @@ public class DestroyObject : MonoBehaviour {
                     GameObject.Find("CloseButton").transform.localScale = new Vector3 (0f, 0f, 0);
                 }
                 GameObject.Find("InteractButton").transform.localScale = new Vector3 (0f, 0f, 0);
-                
-                 Destroy (gameObject, selfDestructSpeed);
+                if(disableCollider){
+                    //gameObject.GetComponent<Collider>().enabled = false;
+                    gameObject.SetActive(false);
+                }
+                else{
+                 Destroy (gameObject, selfDestructSpeed);}
                 
                 
 

@@ -24,6 +24,8 @@ public class UIBattleWonScript : MonoBehaviour {
   public GameObject LightRes;
   public GameObject Lvl;
   public GameObject BG;
+  GameObject TransitionBG;
+    GameObject LoadingBG;
   public bool Ready = true;
   int lvl = PlayerStats.Level;
   float PreFire = PlayerStats.FireRes * 100;
@@ -40,6 +42,8 @@ public class UIBattleWonScript : MonoBehaviour {
 
   // Use this for initialization
   void Start () {
+     TransitionBG = GameObject.Find("TransitionBG");
+        LoadingBG = GameObject.Find("LoadingBG");
     RuneButton = GameObject.Find ("RuneButton");
     BG = GameObject.Find ("BGLVLUP");
     BG.transform.localScale = new Vector3 (0f, 0f, 0f);
@@ -136,8 +140,81 @@ public class UIBattleWonScript : MonoBehaviour {
 
         PlayerStats.CurrentHP = Player.GetComponent<PlayerMovement> ().health;
         print ("back to overworld");
-        SceneManager.LoadScene (PlayerStats.CurrentScene, LoadSceneMode.Single);
+
+        //SceneManager.LoadScene (PlayerStats.CurrentScene, LoadSceneMode.Single);
+        StartCoroutine (FadeInRoutine ());
       }
     }
   }
+
+IEnumerator FadeInRoutine () {
+    
+         float fadeAmount;
+		 float fadeSpeed = 5;
+         Color tempColor = TransitionBG.GetComponent<Image>().color;
+          tempColor = new Color(tempColor.r,tempColor.g,tempColor.b,0f);
+          TransitionBG.GetComponent<Image>().color = tempColor;
+          
+         TransitionBG.GetComponent<Image>().enabled = true;
+		  
+        //fade to black
+		 while (TransitionBG.GetComponent<Image>().color.a < 100){
+             if(TransitionBG.GetComponent<Image>().color.a > 5){
+                 fadeSpeed = 200;
+
+             }
+			 fadeAmount = tempColor.a + (fadeSpeed * Time.deltaTime);
+			 tempColor = new Color(tempColor.r,tempColor.g,tempColor.b,fadeAmount);
+		 
+          
+          TransitionBG.GetComponent<Image>().color = tempColor;
+          
+		  yield return null;
+		  }
+          fadeAmount = 0;
+		 fadeSpeed = 5;
+         tempColor = LoadingBG.GetComponent<Image>().color;
+         tempColor = new Color(tempColor.r,tempColor.g,tempColor.b,0f);
+         LoadingBG.GetComponent<Image>().color = tempColor;
+         LoadingBG.GetComponent<Image>().enabled = true;
+		  tempColor = LoadingBG.GetComponent<Image>().color;
+        //fade to black
+		 while (LoadingBG.GetComponent<Image>().color.a < 100){
+             if(LoadingBG.GetComponent<Image>().color.a > 5){
+                 fadeSpeed = 200;
+
+             }
+			 fadeAmount = tempColor.a + (fadeSpeed * Time.deltaTime);
+			 tempColor = new Color(tempColor.r,tempColor.g,tempColor.b,fadeAmount);
+		 
+          
+          LoadingBG.GetComponent<Image>().color = tempColor;
+          
+		  yield return null;
+		  }
+          //load new scene
+          StartCoroutine (LoadScene (PlayerStats.CurrentScene));
+       
+        
+        
+        
+    }
+
+     public IEnumerator LoadScene (string scene) {
+
+      
+        
+
+        // Start an asynchronous operation
+        AsyncOperation async = Application.LoadLevelAsync (scene); //, LoadSceneMode.Single
+
+        // While the asynchronous operation to load the new scene is not complete, continue waiting until its done
+        while (!async.isDone) {
+            yield return null;
+        }
+
+    }
+
+
+
 }
